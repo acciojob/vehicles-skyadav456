@@ -1,6 +1,5 @@
 package com.driver;
 
-
 public class Vehicle {
 
     private String name;
@@ -9,22 +8,21 @@ public class Vehicle {
 
     public Vehicle(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
+        this.currentSpeed = 0;
+        this.currentDirection = 0;
     }
 
     public void steer(int direction){
-        currentDirection += direction;
+        //direction is in degrees, add it to the current direction
+        this.currentDirection += direction;
         System.out.println("steer method called - The direction is changed to: " + currentDirection + " degrees");
     }
 
     public void move(int speed, int direction){
+        //set the values of currentSpeed and currentDirection
         this.currentSpeed = speed;
         this.currentDirection = direction;
-        System.out.println("move method called - The speed is changed to: " + currentSpeed +
-                ", and the direction is changed to: " + currentDirection + " degrees");
+        System.out.println("move method called - The speed is changed to: " + currentSpeed + ", and the direction is changed to: " + currentDirection + " degrees");
     }
 
     public void stop(){
@@ -32,12 +30,14 @@ public class Vehicle {
         System.out.println("stop method called - The vehicle is stopped");
     }
 
-    // 🔹 Required getters
     public int getCurrentSpeed() {
         return currentSpeed;
     }
-
-    public int getCurrentDirection() {
+    public int getCurrentDirection(){
         return currentDirection;
     }
+    public String getName(){
+        return name;
+    }
+
 }
