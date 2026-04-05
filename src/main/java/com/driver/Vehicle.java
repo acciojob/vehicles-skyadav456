@@ -1,5 +1,6 @@
 package com.driver;
 
+
 public class Vehicle {
 
     private String name;
@@ -8,6 +9,10 @@ public class Vehicle {
 
     public Vehicle(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void steer(int direction){
